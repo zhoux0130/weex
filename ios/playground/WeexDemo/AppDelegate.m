@@ -15,9 +15,11 @@
 #import "WXImgLoaderDefaultImpl.h"
 #import "DemoDefine.h"
 #import "WXScannerVC.h"
+#import "WXDevTool.h"
 #import <WeexSDK/WeexSDK.h>
 #import <AVFoundation/AVFoundation.h>
 #import <ATSDK/ATManager.h>
+#import "WXDatasource.h"
 
 @interface AppDelegate ()
 @end
@@ -83,6 +85,11 @@
     
     [WXSDKEngine registerComponent:@"select" withClass:NSClassFromString(@"WXSelectComponent")];
     [WXSDKEngine registerModule:@"event" withClass:[WXEventModule class]];
+    [WXSDKEngine registerModule:@"datasource" withClass:[WXDatasource class]];
+    
+    
+    [WXDevTool setDebug:YES];
+    [WXDevTool launchDevToolDebugWithUrl:@"ws://30.34.200.94:8088/debugProxy/native"];
     
 #if !(TARGET_IPHONE_SIMULATOR)
     [self checkUpdate];
