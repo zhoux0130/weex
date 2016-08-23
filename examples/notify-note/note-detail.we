@@ -1,0 +1,81 @@
+<template>
+	<container class="add-note-panel">
+    <div class="edit-panel">
+      <text class="edit-title">书名：</text>
+      <input
+        type="text"
+        class="edit-input"
+      />
+    </div>
+    <div class="edit-panel">
+      <text class="edit-title">描述：</text>
+      <input
+        type="text"
+        class="edit-input"
+      />
+    </div>
+    <div class="edit-panel">
+      <text class="edit-title">日期：</text>
+      <input
+        type="text"
+        class="edit-input"
+      />
+    </div>
+		<div class="box">
+		      <wxc-button class="add-notify-btn" value="添加记录" onclick="{{addNote}}" type="primary" size="middle"></wxc-button>
+		</div>
+
+		
+		
+    </container>
+</template>
+
+<style>
+  .add-note-panel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#fafafa;
+  }
+
+
+  .edit-panel {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+
+  .edit-input {
+    font-size: 30px;
+    height: 50px;
+    width: 550px;
+    background-color: white;
+  }
+</style>
+
+<script>
+  require('weex-components');
+  var event = require('@weex-module/event');
+  module.exports = {
+    data: {
+    	 noteList: [
+    	 	{name: 'abc', price: 100},
+        	{name: 'def', price: 500},
+        	{name: 'ghi', price: 1.5},
+    	 ]
+    },
+    methods: {
+    	addNote:function(){
+        console.log("wo bei zhixing l e");
+        // var text = "";
+        var datasource = require('@weex-module/datasource');
+        var queryParam = {};
+
+        datasource.request(queryParam, function(o){
+          console.log("我被回调了");
+        });
+      }
+    }
+  }
+</script>

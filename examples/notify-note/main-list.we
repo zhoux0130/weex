@@ -1,0 +1,73 @@
+<template>
+	<container >
+		<div class="box">
+		      <wxc-button class="add-notify-btn" value="添加记录" onclick="{{openEdit}}" type="primary" size="middle"></wxc-button>
+		</div>
+
+		
+		<list class="list">
+	      <cell onappear="onappear" ondisappear="ondisappear" class="row" repeat="{{noteList}}" index="{{$index}}">
+	        <div class="item">
+	          <text class="item-title">{{name}} {{price}}</text>
+	        </div>
+	      </cell>
+	    </list>
+    </container>
+</template>
+
+<style>
+  .box {
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  }
+
+  .add-notify-btn {
+    margin-top: 10px;
+  }
+
+  .list {
+    height:850px
+  }
+  .count {
+    font-size: 48px;
+    margin:10px;
+  }
+  .indicator {
+    height: 40px;
+    width: 40px;
+    color:#45b5f0;
+  }
+  .row {
+    width: 750px;
+  }
+  .item {
+    justify-content: center;
+    border-bottom-width: 2px;
+    border-bottom-color: #c0c0c0;
+    height: 100px;
+    padding:20px;
+  }
+  .item-title {
+  }
+</style>
+
+<script>
+  require('weex-components');
+  var event = require('@weex-module/event');
+  module.exports = {
+    data: {
+    	 noteList: [
+    	 	{name: 'abc', price: 100},
+        	{name: 'def', price: 500},
+        	{name: 'ghi', price: 1.5},
+    	 ]
+    },
+    methods: {
+    	openEdit:function(){
+        event.openURL("/examples/build/notify-note/note-detail.js");
+        //this.$openURL(this.url);
+      }
+    }
+  }
+</script>
