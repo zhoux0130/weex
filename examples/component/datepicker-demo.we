@@ -1,0 +1,14 @@
+<template>
+  <datepicker date=""></datepicker>
+</template>
+
+<style>
+  .txt {
+    margin-bottom: 12px;
+    font-size: 40px;
+  }
+</style>
+
+<script>
+  require('weex-components');
+</script>
