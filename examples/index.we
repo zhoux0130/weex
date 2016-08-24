@@ -14,6 +14,7 @@
 
         // common
         {name: 'hello', title: 'Hello World'},
+        {name: 'component/datepicker-demo', title: 'date picker'},
         {name: 'notify-note/main-list', title: 'list detail'},
         {name: 'syntax/index', title: 'More Syntax'},
         {name: 'style/index', title: 'Common Style'},

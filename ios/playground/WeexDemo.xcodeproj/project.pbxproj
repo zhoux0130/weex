@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		185B85B71D6C5527009C5365 /* WXDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B85B61D6C5527009C5365 /* WXDatasource.m */; };
+		185B85BD1D6D9586009C5365 /* WXDatepickerComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B85BC1D6D9586009C5365 /* WXDatepickerComponent.m */; };
 		2AE88A2C1C8544E6003329DE /* WXScannerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE88A2B1C8544E6003329DE /* WXScannerVC.m */; };
 		59EA0DA71D2E7D19004F904A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59EA0DA61D2E7D19004F904A /* Images.xcassets */; };
 		74CC79EB1C2B9E4700829368 /* UIViewController+WXDemoNaviBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CC79EA1C2B9E4700829368 /* UIViewController+WXDemoNaviBar.m */; };
@@ -53,6 +54,9 @@
 /* Begin PBXFileReference section */
 		185B85B51D6C5527009C5365 /* WXDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXDatasource.h; path = extend/module/WXDatasource.h; sourceTree = "<group>"; };
 		185B85B61D6C5527009C5365 /* WXDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WXDatasource.m; path = extend/module/WXDatasource.m; sourceTree = "<group>"; };
+		185B85BB1D6D9586009C5365 /* WXDatepickerComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXDatepickerComponent.h; path = extend/component/WXDatepickerComponent.h; sourceTree = "<group>"; };
+		185B85BC1D6D9586009C5365 /* WXDatepickerComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WXDatepickerComponent.m; path = extend/component/WXDatepickerComponent.m; sourceTree = "<group>"; };
+		185B85BE1D6D9E21009C5365 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		1888E2C5769382461DEDC97D /* Pods-WeexUITestDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexUITestDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeexUITestDemo/Pods-WeexUITestDemo.release.xcconfig"; sourceTree = "<group>"; };
 		2278B1B1FCE894EDAF9F0171 /* Pods-WeexUITestDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexUITestDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeexUITestDemo/Pods-WeexUITestDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		22E4D2883CC56188A2CA9C13 /* Pods-WeexDemo.uitest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexDemo.uitest.xcconfig"; path = "Pods/Target Support Files/Pods-WeexDemo/Pods-WeexDemo.uitest.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 		327BB19797F63D5309FB91BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				185B85BE1D6D9E21009C5365 /* Reveal.framework */,
 				7475ACA01CD8444A0044E96C /* libsqlite3.0.tbd */,
 				7601607D735D7F8D88971230 /* libPods-WeexDemo.a */,
 				E48C20F443AA337D1FE97622 /* libPods-WeexUITestDemo.a */,
@@ -291,6 +296,8 @@
 			children = (
 				DCABAFF91D029748001C8592 /* WXSelectComponent.h */,
 				DCABAFFA1D029748001C8592 /* WXSelectComponent.m */,
+				185B85BB1D6D9586009C5365 /* WXDatepickerComponent.h */,
+				185B85BC1D6D9586009C5365 /* WXDatepickerComponent.m */,
 			);
 			name = component;
 			sourceTree = "<group>";
@@ -562,6 +569,7 @@
 				DCABB0011D02975E001C8592 /* WXEventModule.m in Sources */,
 				775BEE831C1E8ECC008D1629 /* AppDelegate.m in Sources */,
 				DCABAFF41D029685001C8592 /* WXATViewHierarchyPlugin.m in Sources */,
+				185B85BD1D6D9586009C5365 /* WXDatepickerComponent.m in Sources */,
 				775BEE801C1E8ECC008D1629 /* main.m in Sources */,
 				DCABAFFE1D029753001C8592 /* WXImgLoaderDefaultImpl.m in Sources */,
 			);
@@ -708,6 +716,10 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-licucore",
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.taobao.WeexPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -737,6 +749,10 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-licucore",
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.taobao.WeexPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";

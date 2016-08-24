@@ -84,6 +84,8 @@
     [WXSDKEngine registerHandler:[WXEventModule new] withProtocol:@protocol(WXEventModuleProtocol)];
     
     [WXSDKEngine registerComponent:@"select" withClass:NSClassFromString(@"WXSelectComponent")];
+    [WXSDKEngine registerComponent:@"datepicker" withClass:NSClassFromString(@"WXDatepickerComponent")];
+
     [WXSDKEngine registerModule:@"event" withClass:[WXEventModule class]];
     [WXSDKEngine registerModule:@"datasource" withClass:[WXDatasource class]];
     
