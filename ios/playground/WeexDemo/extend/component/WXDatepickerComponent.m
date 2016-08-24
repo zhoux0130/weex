@@ -38,7 +38,7 @@
 
 - (UIView *)loadView
 {
-    return  [[UIInputView alloc]init];//[[WXDatepicker alloc] init];
+    return  [[WXDatepicker alloc] init];
 }
 
 -(void) viewDidLoad{
