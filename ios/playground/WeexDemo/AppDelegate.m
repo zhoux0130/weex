@@ -91,7 +91,7 @@
     
     
     [WXDevTool setDebug:YES];
-    [WXDevTool launchDevToolDebugWithUrl:@"ws://30.34.200.94:8088/debugProxy/native"];
+    [WXDevTool launchDevToolDebugWithUrl:@"ws://30.34.200.91:8088/debugProxy/native"];
     
 #if !(TARGET_IPHONE_SIMULATOR)
     [self checkUpdate];

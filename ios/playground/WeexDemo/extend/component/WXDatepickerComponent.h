@@ -8,6 +8,6 @@
 #import <UIKit/UIKit.h>
 #import "WXComponent.h"
 
-@interface WXDatepickerComponent : WXComponent
+@interface WXDatepickerComponent : WXComponent//<UIPickerViewDataSource,UIPickerViewDelegate>
 
 @end

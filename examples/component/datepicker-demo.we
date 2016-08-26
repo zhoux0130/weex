@@ -1,14 +1,28 @@
 <template>
-  <datepicker date=""></datepicker>
+
+  <scroller>
+  <datepicker type="date" onchange="changed"
+        </datepicker>
+  <text>测试试试:{{a}}</text>
+  </scroller>
 </template>
 
 <style>
-  .txt {
-    margin-bottom: 12px;
-    font-size: 40px;
-  }
+  
 </style>
 
 <script>
   require('weex-components');
+  module.exports = {
+    data: {
+      a:''
+    },
+    methods:{
+      changed: function(event) {  
+        this.a = event.value;        
+        nativeLog(event.value);
+      }
+    }
+    
+  }
 </script>

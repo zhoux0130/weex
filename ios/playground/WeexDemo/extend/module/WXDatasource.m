@@ -22,5 +22,4 @@ WX_EXPORT_METHOD(@selector(request:callback:))
     });
 }
 
-
 @end

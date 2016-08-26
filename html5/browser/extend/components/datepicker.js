@@ -23,6 +23,26 @@ const attr = {
   }
 }
 
+
+// events configurations
+const event = {
+  change: {
+    updator: function () {
+      return {
+        attrs: {
+          value: this.node.value
+        }
+      }
+    },
+    extra: function () {
+      return {
+        value: this.node.value,
+        timestamp: Date.now()
+      }
+    }
+  }
+}
+
 function init (Weex) {
   const Atomic = Weex.Atomic
   const extend = Weex.utils.extend
@@ -36,6 +56,7 @@ function init (Weex) {
   Datepicker.prototype = Object.create(Atomic.prototype)
   extend(Datepicker.prototype, proto)
   extend(Datepicker.prototype, { attr })
+  // extend(Datepicker.prototype, { event })
 
   Weex.registerComponent('datepicker', Datepicker)
 }
